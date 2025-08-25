@@ -1,4 +1,14 @@
 {
+  "lib/*_web/live/*_live.ex": {
+    "type":      "live",
+    "alternate": "lib/*_web/live/{}_live.html.heex",
+    "template": [
+      "# lib/{}.ex",
+      "defmodule XXX do",
+      "end"
+    ]
+  },
+  
   "lib/*.ex": {
     "type":      "src",
     "alternate": "test/{}_test.exs",
@@ -35,17 +45,6 @@
     ],
     "template": [
       "# {basename}_controller.ex",
-      "defmodule XXX do",
-      "end"
-    ]
-  },
-  "*_live.ex": {
-    "type": "live",
-    "related": [
-      "{dirname|dirname}/views/{basename}_view.ex"
-    ],
-    "template": [
-      "# {basename}_live.ex",
       "defmodule XXX do",
       "end"
     ]
